@@ -1,0 +1,12 @@
+{
+  "extName": {
+    "message": "Tick",
+    "description": "Product name. Change it here; nothing else references the name."
+  },
+  "extShortName": {
+    "message": "Tick"
+  },
+  "extDescription": {
+    "message": "Your Claude usage, right under the chat box: 5-hour and weekly limits, or monthly spend on usage-billed plans. Runs locally."
+  }
+}

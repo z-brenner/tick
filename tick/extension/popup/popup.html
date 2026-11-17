@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tick</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main id="app">
+      <header class="top">
+        <img src="../icons/icon32.png" width="18" height="18" alt="" />
+        <span class="name" id="name"></span>
+      </header>
+
+      <nav class="accounts" id="accounts" aria-label="Accounts" hidden></nav>
+
+      <section class="card" id="details" aria-live="polite"></section>
+
+      <section class="card settings" aria-labelledby="opt-h">
+        <h2 id="opt-h">Options</h2>
+
+        <label class="row">
+          <span><b>Meter under the chat box</b><small>The bar on claude.ai. The toolbar icon still works when it’s off.</small></span>
+          <input type="checkbox" class="switch" data-key="showMeter" />
+        </label>
+
+        <label class="row">
+          <span><b>Pace marker and projections</b><small>A tick for even pace, plus a straight-line estimate.</small></span>
+          <input type="checkbox" class="switch" data-key="showPace" />
+        </label>
+
+        <div class="row">
+          <span><b>Reset times</b><small>Smart: countdown under a day, then day and time.</small></span>
+          <div class="seg" role="radiogroup" data-key="resetStyle" aria-label="Reset times">
+            <button type="button" role="radio" data-v="smart">Smart</button>
+            <button type="button" role="radio" data-v="relative">Countdown</button>
+            <button type="button" role="radio" data-v="clock">Clock</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <span><b>Warn me at</b><small>A notification when any limit crosses this.</small></span>
+          <div class="seg" role="radiogroup" data-key="warnAt" aria-label="Warn me at">
+            <button type="button" role="radio" data-v="0">Off</button>
+            <button type="button" role="radio" data-v="75">75%</button>
+            <button type="button" role="radio" data-v="90">90%</button>
+            <button type="button" role="radio" data-v="95">95%</button>
+          </div>
+        </div>
+
+        <label class="row">
+          <span><b>Tell me when a limit resets</b><small>Only for limits you were close to.</small></span>
+          <input type="checkbox" class="switch" data-key="notifyReset" />
+        </label>
+
+        <label class="row">
+          <span><b>Percent on the toolbar icon</b><small>Whichever limit you’re closest to.</small></span>
+          <input type="checkbox" class="switch" data-key="badge" />
+        </label>
+      </section>
+
+      <footer class="foot">
+        <span>Reads your usage from claude.ai in your own browser. No servers, no analytics.</span>
+        <span id="ver"></span>
+      </footer>
+    </main>
+
+    <script src="../shared/core.js"></script>
+    <script src="../shared/api.js"></script>
+    <script src="../shared/details.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
